@@ -2,6 +2,9 @@
 Chat application using  nodejs + expressjs + socketio
 
 Create an express application named chatApp
+
+
+```
 $ express chatApp
 
    create : chatApp
@@ -28,14 +31,23 @@ $ express chatApp
    run the app:
      $ DEBUG=chatApp ./bin/www
 
+```
+
 Move to the application folder.
+
+```
 $ cd chatApp/
 
+```
 Just check the files created inside
+
+```
 $ ls
 
+```
 Now we need to install the dependencies. Dependencies are listed in the package.json. The current content of package.json file is
 
+```
 {
   "name": "chatApp",
   "version": "0.0.0",
@@ -54,8 +66,13 @@ Now we need to install the dependencies. Dependencies are listed in the package.
   }
 }
 
+```
 To install the dependencies use the folling command.
+
+```
 $ npm install
+
+```
 
 Now if you check the app.js file you can find lots of code. Remove everything and add the following code
 	
@@ -68,8 +85,10 @@ Now if you check the app.js file you can find lots of code. Remove everything an
 
 Run the application using
 
+```
 $ node app.js
 
+```
 listening on port:3000
 
 Create an index page with the following code and save the file with name index.html
