@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to InApp</title>
+</head>
+	<body>
+	    <ul id="msgs"></ul>
+	    <form action="">
+	      <input id="txtMsg" autocomplete="off" /><button>Send</button>
+	    </form>
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			var socket = io();
+			var name = window.prompt("What is your name?");
+			socket.emit('login', name);	
+				
+
+			  $('form').submit(function(){
+			    socket.emit('sendMsg',{by:name, msg: $('#txtMsg').val()});
+			    $('#txtMsg').val('');
+			    return false;
+			  });
+			  
+			  socket.on('newUser', function(name){
+			    $('#msgs').append($('<li>').text(name +" is online"));
+			  });
+			  socket.on('getMsg', function(res){
+			    $('#msgs').append($('<li>').text(res.by +": "+res.msg ));
+			  });
+		</script>
+	</body>
+</html>

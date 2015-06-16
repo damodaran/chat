@@ -1,0 +1,54 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'socketio',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'socketio', null ]
+7 verbose cache add name=undefined spec="socketio" args=["socketio",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'socketio',
+8 verbose parsed url   path: 'socketio',
+8 verbose parsed url   href: 'socketio' }
+9 silly lockFile be461470-socketio socketio
+10 verbose lock socketio /home/damodaran/.npm/be461470-socketio.lock
+11 silly lockFile be461470-socketio socketio
+12 silly lockFile be461470-socketio socketio
+13 verbose addNamed [ 'socketio', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile fa004f70-socketio socketio@
+16 verbose lock socketio@ /home/damodaran/.npm/fa004f70-socketio.lock
+17 silly addNameRange { name: 'socketio', range: '*', hasData: false }
+18 verbose registry.get https://registry.npmjs.org/socketio not expired, no request
+19 silly addNameRange number 2 { name: 'socketio', range: '*', hasData: true }
+20 silly addNameRange versions [ 'socketio', [] ]
+21 error TypeError: Cannot read property 'latest' of undefined
+21 error     at next (/usr/lib/node_modules/npm/lib/cache/add-named.js:219:35)
+21 error     at /usr/lib/node_modules/npm/lib/cache/add-named.js:207:5
+21 error     at RegClient.get_ (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:130:14)
+21 error     at RegClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:49:12)
+21 error     at evalmachine.<anonymous>:272:14
+21 error     at /usr/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:102:5
+21 error     at Object.oncomplete (evalmachine.<anonymous>:108:15)
+22 error If you need help, you may report this *entire* log,
+22 error including the npm and node versions, at:
+22 error     <http://github.com/npm/npm/issues>
+23 error System Linux 3.13.0-52-generic
+24 error command "/usr/bin/node" "/usr/bin/npm" "install" "socketio" "--save"
+25 error cwd /home/damodaran/projects/nodejs/blog/chat
+26 error node -v v0.10.37
+27 error npm -v 1.4.28
+28 error type non_object_property_load
+29 verbose exit [ 1, true ]
