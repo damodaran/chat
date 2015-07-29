@@ -191,6 +191,27 @@ Now update index.html with input box and send button
 		</body>
 	</html>
 
-I will update the full script as soon as possible.
+Here we are creating a socket connection and emitting the message that the user type in the text box. We are getting the name of the user using the prompt. then sending a login event to server.
+
+Now we need to listen to these events in server and handle them properly. So open the app.js file and update the io.connection function as: 
+
+io.on('connection', function(socket){
+  console.log('New client is connected to the server');
+  //listening to the sendMsg from client.
+  socket.on('sendMsg', function(msg){
+    console.log('message: ' + msg);
+	//emiting the getMsg event to all the sockets that is connected.
+    io.emit('getMsg', msg);
+  });
+  //Listening to the login event.
+  socket.on("login",function(name) {
+	//emitting the newUser event to all the clients
+    io.emit('newUser', name);
+  });
+});
+
+Now in the command line type the following code. This will run our application 
 
 $ node app.js
+
+Now open your browser and go to http://localhost:3000/ and enjoy the chat :)
